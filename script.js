@@ -54,4 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 40); // Atualiza a cada 40 milissegundos
     });
 
+    // --- 3. MENU HAMBURGUER PARA MOBILE ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar em um link
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
 });
