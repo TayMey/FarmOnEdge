@@ -1,0 +1,311 @@
+/* --- Reset e Variáveis --- */
+:root {
+    --primary-color: #1f9115; /* Azul institucional */
+    --secondary-color: #ffde59; /* Amarelo de destaque */
+    --text-color: #333333;
+    --text-light: #666666;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Tipografia e Botões --- */
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 28px;
+    border: none; /* Recomendado remover a borda padrão */
+    border-radius: 50px; /* Valor alto para garantir o formato de pílula */
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+.container-botao-direita{
+    display: flex;
+    justify-content: flex-end; /* Empurra o conteúdo (o botão) para o final da linha */
+    margin-top: 30px; /* Dá um respiro entre os cards de cima e o botão */
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: green;
+}
+
+/* --- Cabeçalho (Navbar) --- */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo h2 {
+    color: var(--text-color);
+    font-size: 24px;
+}
+
+.logo span {
+    color: green;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Seção Hero --- */
+.hero {
+    background: linear-gradient(rgba(30, 78, 26, 0.8), rgba(0, 31, 77, 0.8)), url('Imagens/imagem2.jpg') center/cover no-repeat;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #35bd00;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+/* --- Áreas de Pesquisa --- */
+.research-areas {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 60px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Container que esconde a barra de rolagem (opcional para ficar mais bonito) */
+.carousel-container {
+    width: 100%;
+    overflow: hidden; /* Esconde elementos que vazam do container geral */
+}
+
+/* A "Trilha" do carrossel que rola na horizontal */
+.carousel-track {
+    display: flex; /* Alinha os cards lado a lado */
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px 0; /* Espaço em cima e embaixo para a sombra não cortar */
+    
+    /* A MÁGICA DA ROLAGEM COMEÇA AQUI */
+    overflow-x: auto; /* Cria a rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Obriga o scroll a "encaixar" no eixo X */
+    scroll-behavior: smooth; /* Faz a rolagem ser suave */
+    
+    /* Esconde a barra de rolagem nativa em alguns navegadores para um visual mais limpo */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+/* O Estilo de cada Cartão no Carrossel */
+.carousel-card {
+    /* Define o tamanho fixo do cartão (ex: 300px ou uma porcentagem) */
+    flex: 0 0 320px; 
+    
+    /* A MÁGICA DO ENCAIXE */
+    scroll-snap-align: start; /* Diz que o começo do cartão deve alinhar com o começo da tela ao rolar */
+    
+    /* Restante do estilo (mesmo que você já usava nos seus cards) */
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Reutilizando a classe da imagem do passo anterior */
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Ajuste específico para os cards do carrossel de vagas */
+.vagas-card {
+    background-color: var(--branco);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+
+.member-card {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.member-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px 0;
+    place-items: center;
+}
+/* --- Responsividade Básica --- */
+@media (max-width: 768px) {
+    .nav-links, .mobile-hide {
+        display: none;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+}

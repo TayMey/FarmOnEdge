@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmOnEdge - Sobre</title>
+    <style>
+        :root {
+            --primary-green: #2d8a3c;
+            --dark-overlay: rgba(0, 0, 0, 0.5);
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header e Navegação */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-participe {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Seção Hero - Baseada na imagem_f2f47e.jpg */
+        .hero {
+            position: relative;
+            height: 60vh;
+            background: url('watermarked_img_11830954143858444893.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(45, 138, 60, 0.7), rgba(0, 0, 0, 0.6));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .stat-item h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #ffcc00; /* Destaque para os números */
+        }
+
+        /* Seção Sobre */
+        .about-section {
+            padding: 60px 10%;
+            background: #f9f9f9;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #e2f3e5;
+            color: var(--primary-green);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplificação para mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">FarmOnEdge</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Pesquisa</a>
+            <a href="#">Equipe</a>
+            <a href="#">Notícias</a>
+        </nav>
+        <a href="#" class="btn-participe">Participe</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>FarmOnEdge</h1>
+            <p>Pesquisa e desenvolvimento em controle inteligente de pragas agrícolas utilizando Inteligência Artificial, Visão Computacional e IoT.</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <h2>+50</h2>
+                    <span>Colaboradores</span>
+                </div>
+                <div class="stat-item">
+                    <h2>+50</h2>
+                    <span>Artigos Publicados</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="about-section">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Inovação no Campo</h2>
+                <p>O <strong>FarmOnEdge</strong> nasceu na Universidade Federal do Ceará (UFC) com o objetivo de integrar tecnologias de ponta ao manejo agrícola. Focamos em soluções que operam na "borda" (Edge Computing), permitindo respostas rápidas sem dependência total de conexão estável à nuvem.</p>
+                
+                <div class="tech-tags">
+                    <span class="tag">YOLO Models</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Deep Learning</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- Espaço para uma imagem complementar ou ilustração de milho -->
+                <img src="watermarked_img_8303921182414589622.png" alt="Plantação de Milho Detalhada" style="width:100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
