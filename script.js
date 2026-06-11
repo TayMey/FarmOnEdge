@@ -71,4 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // --- 4. MOSTRAR/ESCONDER BOTÃO VOLTAR AO TOPO ---
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        // Mostra o botão quando a tela for rolada mais de 300px para baixo
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    });
+
 });
